@@ -1,0 +1,63 @@
+web:
+  options:
+    webpack_work_dir: "{_1}/"
+
+  css:
+    webpack:
+      options:
+        config_file: "{_1}/resources/webpack-{_2}.config.js"
+      raw_depend_in:
+        - package-lock.json
+        - "{_1}/resources/webpack-{_2}.config.js"
+        - "{_1}/resources/sass/**/*.scss"
+        - lib/react-materialweb/sass/**/*.scss
+      raw_extra_out:
+        - "{_1}/resources/generated/webpack-{_2}.meta.json"
+
+  js:
+    webpack:
+      options:
+        config_file: "{_1}/resources/webpack-{_2}.config.js"
+      raw_depend_in:
+        - package-lock.json
+        - "{_1}/resources/webpack-{_2}.config.js"
+        - "{_1}/resources/js/**/*.js"
+        - lib/react-materialweb/js/**/*.js
+      raw_extra_out:
+        - "{_1}/resources/generated/webpack-{_2}.meta.json"
+
+
+node_modules:
+  fontawesome:
+    fonts:
+      cp:
+        raw_file_in: "{_1}/@fortawesome/{_2}-free/webfonts/*"
+        raw_file_out: web/public/fonts/
+
+  material-design-icons:
+    cp:
+      raw_file_in: "{_1}/{_2}/iconfont/MaterialIcons-Regular.*"
+      raw_file_out: web/public/fonts/
+
+  typeface-roboto:
+    cp:
+      raw_file_in: "{_1}/{_2}/files/*"
+      raw_file_out: web/public/fonts/
+
+    woff2ttf:
+      raw_file_in: "{_1}/{_2}/files/*.woff"
+      raw_file_out: web/public/fonts/
+
+    woff2svg:
+      raw_file_in: "{_1}/{_2}/files/*.woff"
+      raw_file_out: web/public/fonts/
+
+    eot:
+      woff2ttf:
+        raw_file_in: "{_1}/{_2}/files/*.woff"
+        raw_file_out: tmp/fonts/
+
+      ttf2eot:
+        rule_in: "{_1}/{_2}/{_3}/woff2ttf"
+        raw_file_in: tmp/fonts/*.ttf
+        raw_file_out: web/public/fonts/

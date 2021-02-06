@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Log;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,59 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Blade Directives
+
+        \Blade::directive('stylesheets', function($expression)
+        {
+            eval("\$params = [$expression];");
+            $name = $params[0] ?? 'main';
+            $inject = $params[1] ?? 'external';
+
+            $metafile = base_path('resources/generated/webpack-css.meta.json');
+            if (! file_exists($metafile)) return '';
+            $webpack = json_decode(file_get_contents($metafile));
+
+            $html = [];
+            foreach ($webpack as $key => $value)
+            {
+                if (preg_match("/(^|~){$name}(~|\\.|-)/", $key, $match))
+                {
+                    if ($inject === 'local')
+                    {
+                        $value = public_path($value);
+                    }
+                    $html[] = "<link href=\"{$value}\" rel=\"stylesheet\"/>";
+                }
+            }
+            return implode("\n", $html);
+        });
+
+        \Blade::directive('javascripts', function($expression)
+        {
+            eval("\$params = [$expression];");
+            $name = $params[0] ?? 'main';
+
+            $name = trim($name, "'\"");
+            $metafile = base_path('resources/generated/webpack-js.meta.json');
+            if (! file_exists($metafile)) return '';
+            $webpack = json_decode(file_get_contents($metafile));
+
+            $html = [];
+            foreach ($webpack as $key => $value)
+            {
+                if (preg_match("/.*\\.map$/", $key, $match))
+                {
+                    continue;
+                }
+                if ($key === 'runtime.js' ||
+                        preg_match("/^(base|react|polyfill)(~|\\.)/", $key,
+                            $match) ||
+                        preg_match("/(^|~){$name}(~|\\.|-)/", $key, $match))
+                {
+                    $html[] = "<script src=\"{$value}\"></script>";
+                }
+            }
+            return implode("\n", $html);
+        });
     }
 }

@@ -1,3 +1,10 @@
+/.BUILD/
+/.virtualenv/
+/node_modules/
 /tmp/
 /var/
-.cpanel.yml
+/web/public/css/*.js
+/web/resources/generated/
+/.cpanel.yml
+/.lock-waf_*
+/python_modules

@@ -1,0 +1,13 @@
+@use "@material/theme" with
+(
+    $primary: #1a237e,
+    $secondary: #ffa726,
+    //$surface: #C5D86D,
+    //$background: #8DE4FF,
+);
+
+@use "@material/typography/functions";
+$mdc-typography-styles-body1: (
+    font-size: functions.pxToRem(18px),
+);
+@import "@material/typography/mdc-typography";
