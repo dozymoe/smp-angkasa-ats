@@ -4,7 +4,6 @@
 /tmp/
 /var/
 /web/public/css/*.js
-/web/resources/generated/
 /.cpanel.yml
 /.lock-waf_*
 /python_modules
