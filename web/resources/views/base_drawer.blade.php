@@ -66,6 +66,7 @@
     @endif
     <div id="js_modal"></div>
   </main>
+  @include ('common.footer')
   @yield ('extra_body')
 </body>
 @endsection
