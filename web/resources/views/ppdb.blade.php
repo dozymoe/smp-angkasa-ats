@@ -16,7 +16,7 @@
 @section ('drawer')
 <div class="mdc-list-group">
   <h6 class="mdc-list-group__subheader">Sekolah</h6>
-  <a href="route('Home')" tabindex="2" class="mdc-list-item">
+  <a href="{{route('Home')}}" tabindex="2" class="mdc-list-item">
     <span class="mdc-list-item__ripple"></span>
     <span class="mdc-list-item__text">Profile</span>
   </a>
@@ -24,7 +24,7 @@
     <span class="mdc-list-item__ripple"></span>
     <span class="mdc-list-item__text">Kegiatan</span>
   </a>
-  <a href="route('Ppdb')" tabindex="0" class="mdc-list-item">
+  <a href="{{route('Ppdb')}}" tabindex="0" class="mdc-list-item">
     <span class="mdc-list-item__ripple"></span>
     <span class="mdc-list-item__text">PPDB</span>
   </a>
