@@ -68,13 +68,7 @@ class AppServiceProvider extends ServiceProvider
                 {
                     continue;
                 }
-                if ($key === 'runtime.js' ||
-                        preg_match("/^(base|react|polyfill)(~|\\.)/", $key,
-                            $match) ||
-                        preg_match("/(^|~){$name}(~|\\.|-)/", $key, $match))
-                {
-                    $html[] = "<script src=\"{$value}\"></script>";
-                }
+                $html[] = "<script src=\"{$value}\"></script>";
             }
             return implode("\n", $html);
         });

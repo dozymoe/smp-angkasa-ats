@@ -20,7 +20,7 @@ export default function(app)
 {
     app.topbar = MDCTopAppBar.attachTo(document.querySelector(
             '.mdc-top-app-bar'));
-    app.topbar.setScrollTarget(document.getElementById('main'));
+    app.topbar.setScrollTarget(document.getElementById('page-wrapper'));
 
     for (let el of document.querySelectorAll('.mdc-banner'))
     {
@@ -86,7 +86,7 @@ export default function(app)
 
         app.drawer.listen('MDCDrawer:closed', () =>
                 {
-                    let el = document.getElementById('main')
+                    let el = document.getElementById('page-wrapper')
                             .querySelector('[tabindex="0"]');
                     if (el) el.focus();
                 });

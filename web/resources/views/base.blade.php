@@ -39,28 +39,29 @@
         </div>
       </header>
 
-      <main id="main" class="mdc-top-app-bar--fixed-adjust">
-        <div class="mdc-layout-grid">
-          <div class="mdc-layout-grid__inner">
-            @if (View::hasSection('content'))
-              @yield ('content')
-            @else
-              <div class="mdc-layout-grid__cell--span-12">
-                <p>Under construction.</p>
-              </div>
-            @endif
-
+      <div id="page-wrapper">
+        <main class="mdc-top-app-bar--fixed-adjust">
+          <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+              @if (View::hasSection('content'))
+                @yield ('content')
+              @else
+                <div class="mdc-layout-grid__cell--span-12">
+                  <p>Under construction.</p>
+                </div>
+              @endif
+            </div>
           </div>
-        </div>
-        @if (View::hasSection('jscontent'))
-          @yield ('jscontent')
-        @else
-          <div id="js_app"></div>
-        @endif
-        <div id="js_modal"></div>
-      </main>
-      @include ('common.footer')
-      @yield ('extra_body')
+          @if (View::hasSection('jscontent'))
+            @yield ('jscontent')
+          @else
+            <div id="js_app"></div>
+          @endif
+          <div id="js_modal"></div>
+        </main>
+        @yield ('extra_body')
+        @include ('common.footer')
+      </div>
     </body>
   @endif
 </html>

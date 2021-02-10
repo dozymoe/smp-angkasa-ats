@@ -22,9 +22,22 @@ web:
         - package-lock.json
         - "{_1}/resources/webpack-{_2}.config.js"
         - "{_1}/resources/js/**/*.js"
+        - "{_1}/resources/js/**/*.jsx"
+        - lib/fireh_react/**/*.js
+        - lib/fireh_react/**/*.jsx
         - lib/react-materialweb/js/**/*.js
+        - lib/react-materialweb/js/**/*.jsx
       raw_extra_out:
         - "{_1}/resources/generated/webpack-{_2}.meta.json"
+
+
+  beep:
+    shell:
+      options:
+        command: say build angkasa {_1} completed
+      rule_in:
+        - "{_1}/css/webpack"
+        - "{_1}/js/webpack"
 
 
 node_modules:

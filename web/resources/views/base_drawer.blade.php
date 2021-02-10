@@ -35,38 +35,40 @@
 
   <aside class="mdc-drawer mdc-drawer--modal">
     <div class="mdc-drawer__content">
-      <div class="mdc-list">
+      <nav class="mdc-list">
         @yield ('drawer')
 
         <div class="mdc-list-group">
-          <h6 class"mdc-list-group__subheader">Website</h6>
+          <h6 class="mdc-list-group__subheader">Website</h6>
           @yield ('drawer_menu_website')
         </div>
-      </div>
+      </nav>
     </div>
   </aside>
   <div class="mdc-drawer-scrim"></div>
 
-  <main id="main" class="mdc-top-app-bar--fixed-adjust">
-    <div class="mdc-layout-grid">
-      <div class="mdc-layout-grid__inner">
-        @if (View::hasSection('content'))
-          @yield ('content')
-        @else
-          <div class="mdc-layout-grid__cell--span-12">
-            <p>Under construction.</p>
-          </div>
-        @endif
+  <div id="page-wrapper"> 
+    <main class="mdc-top-app-bar--fixed-adjust">
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          @if (View::hasSection('content'))
+            @yield ('content')
+          @else
+            <div class="mdc-layout-grid__cell--span-12">
+              <p>Under construction.</p>
+            </div>
+          @endif
+        </div>
       </div>
-    </div>
-    @if (View::hasSection('jscontent'))
-      @yield ('jscontent')
-    @else
-      <div id="js_app"></div>
-    @endif
-    <div id="js_modal"></div>
-  </main>
-  @include ('common.footer')
-  @yield ('extra_body')
+      @if (View::hasSection('jscontent'))
+        @yield ('jscontent')
+      @else
+        <div id="js_app"></div>
+      @endif
+      <div id="js_modal"></div>
+    </main>
+    @yield ('extra_body')
+    @include ('common.footer')
+  </div>
 </body>
 @endsection

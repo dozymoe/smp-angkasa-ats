@@ -1,9 +1,10 @@
+@use "./variables";
 @use "@material/theme" with
 (
-    $primary: #1a237e,
-    $secondary: #ffa726,
-    //$surface: #C5D86D,
-    //$background: #8DE4FF,
+    $primary: variables.$primary,
+    $secondary: variables.$secondary,
+    $surface: variables.$surface,
+    $background: variables.$background,
 );
 
 @use "@material/typography/functions";
