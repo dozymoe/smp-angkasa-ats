@@ -9,9 +9,13 @@ footer
     @include theme.property(background-color, 'primary');
     @include theme.property(color, 'on-primary');
 
-    .contact-info
+    a
     {
         @include theme.property(color, 'on-primary');
+    }
+
+    .contact-info
+    {
         display: block;
         padding: 0.5em 2px;
         text-decoration: none;

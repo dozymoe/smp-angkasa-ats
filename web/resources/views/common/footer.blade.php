@@ -43,6 +43,9 @@
       </div>
 
       <div class="mdc-layout-grid__cell--span-3">
+        <p>
+          <a href="{{route('Ppdb')}}">Penerimaan Peserta Didik Baru (PPDB)</a>
+        </p>
       </div>
     </div>
   </div>

@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>{{$title_content ?? ''}}</title>
+    <title>@if (!empty($title)) {{$title}} - {{env('APP_NAME')}}
+      @else SMP Angkasa Atang Sandjaja
+      @endif</title>
     <link rel="shortcut icon" href="/favicon.ico">
     @yield ('head_meta')
     @stylesheets ('app')
@@ -25,7 +27,9 @@
               </a>
             @endif
 
-            <h1 class="mdc-top-app-bar__title">{{$title_content}}</h1>
+            <h1 class="mdc-top-app-bar__title">
+              {{$title ?? "SMP Angkasa Atang Sandjaja"}}
+            </h1>
           </section>
 
           @if (View::hasSection('topbar_right_wrapper'))

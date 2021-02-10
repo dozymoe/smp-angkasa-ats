@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::name('Home')->get('/', function()
 {
-    return view('welcome')
-            ->with('title_content', "SMP Angkasa Atang Sanjaya");
+    return view('welcome');
+});
+
+Route::name('Ppdb')->get('/ppdb', function()
+{
+    return view('ppdb');
 });

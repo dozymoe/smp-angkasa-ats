@@ -14,7 +14,9 @@
           </a>
         @endif
 
-        <h1 class="mdc-top-app-bar__title">{{$title_content}}</h1>
+        <h1 class="mdc-top-app-bar__title">
+          {{$title ?? "SMP Angkasa Atang Sandjaja"}}
+        </h1>
       </section>
 
       @if (View::hasSection('topbar_right_wrapper'))
