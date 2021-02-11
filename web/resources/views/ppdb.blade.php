@@ -14,28 +14,25 @@
 
 
 @section ('drawer')
-<div class="mdc-list-group">
-  <h6 class="mdc-list-group__subheader">Sekolah</h6>
-  <a href="{{route('Home')}}" tabindex="2" class="mdc-list-item">
-    <span class="mdc-list-item__ripple"></span>
-    <span class="mdc-list-item__text">Profile</span>
-  </a>
-  <a href="#kegiatan" tabindex="3" class="mdc-list-item">
-    <span class="mdc-list-item__ripple"></span>
-    <span class="mdc-list-item__text">Kegiatan</span>
-  </a>
-  <a href="{{route('Ppdb')}}" tabindex="0" class="mdc-list-item">
-    <span class="mdc-list-item__ripple"></span>
-    <span class="mdc-list-item__text">PPDB</span>
-  </a>
-</div>
+<a href="{{route('VisiMisi')}}" tabindex="2" class="mdc-list-item">
+  <span class="mdc-list-item__ripple"></span>
+  <span class="mdc-list-item__text">Profil</span>
+</a>
+<a href="#kegiatan" tabindex="3" class="mdc-list-item">
+  <span class="mdc-list-item__ripple"></span>
+  <span class="mdc-list-item__text">Kegiatan</span>
+</a>
+<a href="{{route('Ppdb')}}" tabindex="0" class="mdc-list-item">
+  <span class="mdc-list-item__ripple"></span>
+  <span class="mdc-list-item__text">PPDB</span>
+</a>
 @endsection
 
 
 @section ('drawer_menu_website')
 <a href="/contact-us" tabindex="1" class="mdc-list-item">
   <span class="mdc-list-item__ripple"></span>
-  <span class="mdc-list-item__text">Contact Us</span>
+  <span class="mdc-list-item__text">Hubungi Kami</span>
 </a>
 @endsection
 

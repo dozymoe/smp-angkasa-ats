@@ -36,10 +36,17 @@
   </header>
 
   <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__header">
+      <h3 class="mdc-drawer__title"><!--
+        --><a href="{{route('Home')}}">SMP Angkasa</a>
+      </h3>
+      <h6 class="mdc-drawer__subtitle">Disiplin, Mandiri, Sukses</h6>
+    </div>
     <div class="mdc-drawer__content">
       <nav class="mdc-list">
         @yield ('drawer')
 
+        <div role="separator" class="mdc-list-divider"></div>
         <div class="mdc-list-group">
           <h6 class="mdc-list-group__subheader">Website</h6>
           @yield ('drawer_menu_website')

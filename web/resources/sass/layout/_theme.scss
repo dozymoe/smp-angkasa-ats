@@ -4,6 +4,14 @@
 //-
 @import "../variables";
 
+.mdc-drawer__title
+{
+    a
+    {
+        text-decoration: none;
+    }
+}
+
 footer
 {
     @include theme.property(background-color, 'primary');

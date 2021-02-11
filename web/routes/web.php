@@ -22,3 +22,8 @@ Route::name('Ppdb')->get('/ppdb', function()
 {
     return view('ppdb');
 });
+
+Route::name('VisiMisi')->get('/profil/visi-misi', function()
+{
+    return view('profile/visi_misi');
+});
