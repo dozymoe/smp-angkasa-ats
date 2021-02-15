@@ -20,8 +20,13 @@
           <span class="mdc-notched-outline__trailing"></span>
         </span>
         <input name="email" value="{{old('email')}}" type="email" required
-            aria-labelledby="email-label" class="mdc-text-field__input">
+            autofocus tabindex="0"
+            aria-labelledby="email-label"
+            aria-describedby="email-errors"
+            class="mdc-text-field__input">
       </label>
+      {{ Html::ul($errors->get('email'), ['id' => 'email-errors',
+          'role' => 'alert', 'class' => 'form-errors']) }}
     </div>
 
     <div class="form-group">
@@ -34,12 +39,18 @@
           <span class="mdc-notched-outline__trailing"></span>
         </span>
         <input name="password" value="" type="password" required
-            aria-labelledby="password-label" class="mdc-text-field__input">
+            tabindex="1"
+            aria-labelledby="password-label"
+            aria-describedby="password-errors"
+            class="mdc-text-field__input">
       </label>
+      {{ Html::ul($errors->get('password'), ['id' => 'password-errors',
+          'role' => 'alert', 'class' => 'form-errors']) }}
     </div>
 
     <div class="mdc-touch-target-wrapper">
-      <button type="submit" class="mdc-button mdc-button--raised mdc-button--touch">
+      <button type="submit" tabindex="2"
+          class="mdc-button mdc-button--raised mdc-button--touch">
         <span class="mdc-button__ripple"></span>
         <span class="fa fa-sign-in-alt mdc-button__icon" aria-hidden="true"></span>
         <span class="mdc-button__label">Login</span>
