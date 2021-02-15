@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::domain(env('MANAGER_DOMAIN'))->group(base_path('routes/web_manage.php'));
+
 Route::name('Home')->get('/', function()
 {
     return view('welcome');

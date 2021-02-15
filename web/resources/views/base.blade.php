@@ -64,7 +64,11 @@
           <div id="js_modal"></div>
         </main>
         @yield ('extra_body')
-        @include ('common.footer')
+        @if (View::hasSection('footer'))
+          @yield ('footer')
+        @else
+          @include ('common.footer')
+        @endif
       </div>
     </body>
   @endif
