@@ -12,6 +12,13 @@
     }
 }
 
+.mdc-list-item__graphic.fa,
+.mdc-list-item__graphic.fas,
+.mdc-list-item__graphic.fab,
+{
+    margin-right: 0;
+}
+
 footer
 {
     @include theme.property(background-color, 'primary');

@@ -516,6 +516,10 @@ class ComposerStaticInitadf80ae5478dadd06c562727cf111113
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Extensions\\ExceptionFormatter' => __DIR__ . '/../..' . '/app/Extensions/ExceptionFormatter.php',
+        'App\\Extensions\\FormRequestException' => __DIR__ . '/../..' . '/app/Extensions/FormRequestException.php',
+        'App\\Extensions\\ModelQueryBuilder' => __DIR__ . '/../..' . '/app/Extensions/ModelQueryBuilder.php',
+        'App\\Extensions\\ModelSerialization' => __DIR__ . '/../..' . '/app/Extensions/ModelSerialization.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -527,6 +531,7 @@ class ComposerStaticInitadf80ae5478dadd06c562727cf111113
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\BlogPosting' => __DIR__ . '/../..' . '/app/Models/BlogPosting.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
