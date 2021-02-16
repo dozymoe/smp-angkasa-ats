@@ -19,12 +19,9 @@ Route::group(['middleware' => 'auth'], function()
 {
     Route::get('', function()
     {
-        return view('profile/visi_misi');
+        return view('welcome_admin');
     });
 
-    Route::prefix('blogposts')->name('BlogPosting.')->group(function()
-    {
-        Route::name('Index')->get('',
-                ['App\Http\Controllers\BlogPostingController', 'index']);
-    });
+    Route::prefix('blog-posts')->name('BlogPosting.')->group(
+            base_path('routes/manage/blog_posting.php'));
 });

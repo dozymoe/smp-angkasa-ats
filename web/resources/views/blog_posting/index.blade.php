@@ -1,5 +1,5 @@
 @extends (
-    'adminbase_drawer',
+    'base_drawer_admin',
     [
       'title' => "Manajemen Artikel",
     ])
